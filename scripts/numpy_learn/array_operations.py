@@ -36,4 +36,4 @@ print(f'matmul2:\nmatrix2 * c = \n{np.matmul(matrix2, c)}\n')
 print(f'Scalar multiplication:\n{b * 3 = }\n')
 
 # Broadcasting addition array
-print(f"Broadcasting Addition:\n{a + 7 = }")
+print(f'Broadcasting Addition:\n{a + 7 = }')
