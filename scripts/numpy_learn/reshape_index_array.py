@@ -1,6 +1,7 @@
 import numpy as np
 
 # create arrays and reshaped version of them
+scalar = np.array(3)
 array = np.array([1, 2, 3, 4, 5, 6])
 matrix = np.array([
     [1, 2, 3],
@@ -12,13 +13,20 @@ reshaped_array2 = array.reshape(3, 2)
 reshaped_array3 = array.reshape(6, 1)
 
 # print origin arrays
+print(f'{scalar = }')
+print(f'Scaler shape: {scalar.shape}')
+print(f'Scalar size: {scalar.size}')
+print(f'Scalar dimension number: {scalar.ndim}\n')
+
 print(f'{array = }')
 print(f'Array shape: {array.shape}') # The form of the array
-print(f'Array size: {array.size}\n') # The number of all elements in the array
+print(f'Array size: {array.size}') # The number of all elements in the array
+print(f'Array dimension number: {array.ndim}\n') # The number of dimensions in the array
 
 print(f'Matrix:\n{matrix}')
 print(f'Matrix shape: {matrix.shape}')
-print(f'Matrix size: {matrix.size}\n')
+print(f'Matrix size: {matrix.size}')
+print(f'Matrix dimension number: {matrix.ndim}\n')
 
 # reshaping arrays
 print(f'Reshaped array1 to (2, 3):\n{reshaped_array1}')
