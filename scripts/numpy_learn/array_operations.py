@@ -29,8 +29,8 @@ print(f'Multiplication:\n{a * b = }\n')
 print(f'Subtraction:\n{a - b = }\n')
 
 # matrix multiplicating arrays
-print(f'matmul1:\nmatrix1 * matrix2 = \n{np.matmul(matrix1, matrix2)}\n')
-print(f'matmul2:\nmatrix2 * c = \n{np.matmul(matrix2, c)}\n')
+print(f'matmul1:\nmatrix1 @ matrix2 = \n{np.matmul(matrix1, matrix2)}\n') # or `matrix1 @ matrix2` or `matrix1.dot(matrix2)`
+print(f'matmul2:\nmatrix2 @ c = \n{np.matmul(matrix2, c)}\n') # or `matrix2 @ c` or `matrix2.dot(c)`
 
 # scalar multiplicating array
 print(f'Scalar multiplication:\n{b * 3 = }\n')
