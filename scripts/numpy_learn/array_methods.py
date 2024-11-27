@@ -10,12 +10,16 @@ matrix2 = np.array([
     [3, 4]
 ])
 
-vector1 = np.array([3.0, 7.0, 5.2, 2, 3.5, 2.6, 1.4, 0.3])
+vector1 = np.array([3.0, 7.0, 5.2, 2.1, 3.5, 2.6, 1.4, 0.3])
+numbers1 = np.array([1, 2, 3])
+numbers2 = np.array([4, 5, 6])
 
 # print arrays
 print(f'matrix1 =\n{matrix1}\n')
 print(f'matrix2 =\n{matrix2}\n')
 print(f'{vector1 = }\n')
+print(f'{numbers1 = }\n')
+print(f'{numbers2 = }\n')
 
 # transpose arrays
 print(f'Transpose of matrix1:\n{matrix1.T}\n')
@@ -48,4 +52,16 @@ print(f'Std of vector1: {vector1.std()}\n')
 
 # argmax and argmin. They will print element index
 print(f'Argmax of matrix1: {matrix1.argmax()}')
-print(f'Argmin of matrix1: {matrix1.argmin()}')
+print(f'Argmin of matrix1: {matrix1.argmin()}\n')
+
+# concatenating arrays
+combined_numbers = np.concatenate((numbers1, numbers2))
+print(f'Combined numbers: {combined_numbers}')
+
+combined_matrix = np.concatenate((matrix2, matrix2))
+print(f'Combined matrix:\n{combined_matrix}\n')
+
+# spliting arrays
+print(f'Splited combined_numbers by 2 batches: {np.split(combined_numbers, 2)}')
+print(f'Splited combined_numbers by 3 batches: {np.split(combined_numbers, 3)}')
+print(f'Splited matrix2: {np.split(matrix2, 2)}')
