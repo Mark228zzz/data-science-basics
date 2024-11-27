@@ -3,6 +3,7 @@ import numpy as np
 # create arrays and reshaped version of them
 scalar = np.array(3)
 array = np.array([1, 2, 3, 4, 5, 6])
+ages = np.array([15, 18, 20, 66, 52, 10, 25])
 matrix = np.array([
     [1, 2, 3],
     [4, 5, 6],
@@ -19,9 +20,9 @@ print(f'Scalar size: {scalar.size}')
 print(f'Scalar dimension number: {scalar.ndim}\n')
 
 print(f'{array = }')
-print(f'Array shape: {array.shape}') # The form of the array
-print(f'Array size: {array.size}') # The number of all elements in the array
-print(f'Array dimension number: {array.ndim}\n') # The number of dimensions in the array
+print(f'Array shape: {array.shape}') # the form of the array
+print(f'Array size: {array.size}') # the number of all elements in the array
+print(f'Array dimension number: {array.ndim}\n') # the number of dimensions in the array
 
 print(f'Matrix:\n{matrix}')
 print(f'Matrix shape: {matrix.shape}')
@@ -51,4 +52,7 @@ print(f'Element at index [1:3, 0:2] in matrix:\n{matrix[1:3, 0:2]}')
 print(f'Element at index [0:, 1:3] in matrix:\n{matrix[0:, 1:3]}')
 
 # boolean masking arrays
-print(f'Elements greater that 4:\n{matrix > 4}') # True if element greater than 4 else False
+print(f'Elements greater that 4:\n{matrix > 4}\n') # True if element greater than 4 else False
+
+# fancy indexing
+print(f'ages[ages >= 18]: {ages[ages > 18]}')
