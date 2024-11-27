@@ -10,16 +10,24 @@ matrix2 = np.array([
     [3, 4]
 ])
 
-vector1 = np.array([3.0, 7.0, 5.2, 2.1, 3.5, 2.6, 1.4, 0.3])
+matrix3 = np.array([
+    [3, 2, 6],
+    [7, 4, 9]
+])
+
+vector1 = np.array([3.0, 7.0, 5.2, 2.1, 3.5, 2.6, 1.4, 0.2])
 numbers1 = np.array([1, 2, 3])
 numbers2 = np.array([4, 5, 6])
+expenses = np.array([np.nan, np.nan, 200.0, 650.0, 1525.0, np.nan])
 
 # print arrays
 print(f'matrix1 =\n{matrix1}\n')
 print(f'matrix2 =\n{matrix2}\n')
+print(f'matrix3 =\n{matrix3}\n')
 print(f'{vector1 = }\n')
 print(f'{numbers1 = }\n')
 print(f'{numbers2 = }\n')
+print(f'{expenses = }\n')
 
 # transpose arrays
 print(f'Transpose of matrix1:\n{matrix1.T}\n')
@@ -65,3 +73,11 @@ print(f'Combined matrix:\n{combined_matrix}\n')
 print(f'Splited combined_numbers by 2 batches: {np.split(combined_numbers, 2)}')
 print(f'Splited combined_numbers by 3 batches: {np.split(combined_numbers, 3)}')
 print(f'Splited matrix2: {np.split(matrix2, 2)}')
+
+# sorting arrays
+print(f'Sorted vector1: {np.sort(vector1)}')
+print(f'Sorted matrix3:\n{np.sort(matrix3, axis=1)}\n')
+
+# handling missing data
+cleaned_expenses = np.nan_to_num(expenses, nan=0.0)
+print(f'Cleaned expenses: {cleaned_expenses}')
