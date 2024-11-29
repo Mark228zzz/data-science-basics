@@ -1,6 +1,6 @@
 import numpy as np
 
-# create arrays and reshaped version of them
+# ====== Creating Arrays ======
 scalar = np.array(3)
 array = np.array([1, 2, 3, 4, 5, 6])
 ages = np.array([15, 18, 20, 66, 52, 10, 25])
@@ -9,50 +9,47 @@ matrix = np.array([
     [4, 5, 6],
     [7, 8, 9]
 ])
-reshaped_array1 = array.reshape(2, 3)
-reshaped_array2 = array.reshape(3, 2)
-reshaped_array3 = array.reshape(6, 1)
 
-# print origin arrays
-print(f'{scalar = }')
-print(f'Scaler shape: {scalar.shape}')
-print(f'Scalar size: {scalar.size}')
-print(f'Scalar dimension number: {scalar.ndim}\n')
+# ====== Reshaping Arrays ======
+reshaped_array1 = array.reshape(2, 3)  # Shape (2, 3)
+reshaped_array2 = array.reshape(3, 2)  # Shape (3, 2)
+reshaped_array3 = array.reshape(6, 1)  # Shape (6, 1)
 
-print(f'{array = }')
-print(f'Array shape: {array.shape}') # the form of the array
-print(f'Array size: {array.size}') # the number of all elements in the array
-print(f'Array dimension number: {array.ndim}\n') # the number of dimensions in the array
+# ====== Display Properties ======
+def display_array_info(name, arr):
+    print(f"{name}:\n{arr}")
+    print(f"Shape: {arr.shape}")
+    print(f"Size: {arr.size}")
+    print(f"Dimensions: {arr.ndim}\n")
 
-print(f'Matrix:\n{matrix}')
-print(f'Matrix shape: {matrix.shape}')
-print(f'Matrix size: {matrix.size}')
-print(f'Matrix dimension number: {matrix.ndim}\n')
+# Scalar Info
+display_array_info("Scalar", scalar)
 
-# reshaping arrays
-print(f'Reshaped array1 to (2, 3):\n{reshaped_array1}')
-print(f'Reshaped array1 shape: {reshaped_array1.shape}\n')
+# Array Info
+display_array_info("Array", array)
 
-print(f'Reshaped array2 to (3, 2):\n{reshaped_array2}')
-print(f'Reshaped array1 shape: {reshaped_array2.shape}\n')
+# Matrix Info
+display_array_info("Matrix", matrix)
 
-print(f'Reshaped array2 to (6, 1):\n{reshaped_array3}')
-print(f'Reshaped array1 shape: {reshaped_array3.shape}\n')
+# Reshaped Arrays Info
+display_array_info("Reshaped Array 1 (2x3)", reshaped_array1)
+display_array_info("Reshaped Array 2 (3x2)", reshaped_array2)
+display_array_info("Reshaped Array 3 (6x1)", reshaped_array3)
 
-# flattening arrays
-print(f'Flatten matrix: {matrix.flatten()}')
+# ====== Flattening Arrays ======
+print(f"Flattened Matrix:\n{matrix.flatten()}\n")
 
-# indexing arrays
-print(f'Element at index [3] in array: {array[3]}')
-print(f'Element at index [1] in matrix: {matrix[1]}')
-print(f'Element at index [2, 2] in matrix: {matrix[2, 2]}')
-print(f'Element at index [2:5] in array: {array[2:6]}')
-print(f'Element at index [0:3, 1] in matrix: {matrix[0:3, 1]}')
-print(f'Element at index [1:3, 0:2] in matrix:\n{matrix[1:3, 0:2]}')
-print(f'Element at index [0:, 1:3] in matrix:\n{matrix[0:, 1:3]}')
+# ====== Indexing ======
+print(f"Element at index [3] in Array: {array[3]}")
+print(f"Element at index [1] in Matrix: {matrix[1]}")
+print(f"Element at index [2, 2] in Matrix: {matrix[2, 2]}")
+print(f"Slice [2:5] in Array: {array[2:6]}")
+print(f"Slice [0:3, 1] in Matrix:\n{matrix[0:3, 1]}")
+print(f"Slice [1:3, 0:2] in Matrix:\n{matrix[1:3, 0:2]}")
+print(f"Slice [0:, 1:3] in Matrix:\n{matrix[0:, 1:3]}\n")
 
-# boolean masking arrays
-print(f'Elements greater that 4:\n{matrix > 4}\n') # True if element greater than 4 else False
+# ====== Boolean Masking ======
+print(f"Elements in Matrix > 4:\n{matrix > 4}\n")
 
-# fancy indexing
-print(f'ages[ages >= 18]: {ages[ages > 18]}')
+# ====== Fancy Indexing ======
+print(f"Elements in Ages >= 18:\n{ages[ages >= 18]}")

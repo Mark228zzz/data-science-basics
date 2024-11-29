@@ -1,6 +1,6 @@
 import numpy as np
 
-# create arrays
+# ====== Data Initialization ======
 array1 = np.array([1, 2, 7])
 array2 = np.array([2, 6, 2])
 array3 = np.array([4, 2])
@@ -14,28 +14,29 @@ matrix2 = np.array([
     [1, 2]
 ])
 
-# print all arrays
-print(f'{array1 = }')
-print(f'{array2 = }')
-print(f'{array3 = }')
-print(f'matrix1 = \n{matrix1}')
-print(f'matrix2 = \n{matrix2}\n')
+# ====== Utility Function ======
+def print_array(name: str, array: np.ndarray):
+    """Utility function to print arrays with structure."""
+    print(f"{name} =\n{array}\n")
 
-# adding arrays
-print(f'Addition:\n{array1 + array2 = }\n')
+# ====== Printing Arrays ======
+print_array("array1", array1)
+print_array("array2", array2)
+print_array("array3", array3)
+print_array("matrix1", matrix1)
+print_array("matrix2", matrix2)
 
-# multiplicating arrays
-print(f'Multiplication:\n{array1 * array2 = }\n')
+# ====== Element-wise Operations ======
+print(f"Addition (array1 + array2): {array1 + array2}\n")
+print(f"Multiplication (array1 * array2): {array1 * array2}\n")
+print(f"Subtraction (array1 - array2): {array1 - array2}\n")
 
-# subtracting arrays
-print(f'Subtraction:\n{array1 - array2 = }\n')
+# ====== Matrix Multiplication ======
+print(f"Matrix Multiplication (matrix1 @ matrix2):\n{np.matmul(matrix1, matrix2)}\n")  # Equivalent to `matrix1 @ matrix2` or `matrix1.dot(matrix2)`
+print(f"Matrix Multiplication (matrix2 @ array3):\n{np.matmul(matrix2, array3)}\n")    # Equivalent to `matrix2 @ array3` or `matrix2.dot(array3)`
 
-# matrix multiplicating arrays
-print(f'matmul1: matrix1 @ matrix2 = \n{np.matmul(matrix1, matrix2)}\n') # or `matrix1 @ matrix2` or `matrix1.dot(matrix2)`
-print(f'matmul2: matrix2 @ array3 = \n{np.matmul(matrix2, array3)}\n') # or `matrix2 @ array3` or `matrix2.dot(array3)`
+# ====== Scalar Operations ======
+print(f"Scalar Multiplication (array2 * 3): {array2 * 3}\n")
 
-# scalar multiplicating array
-print(f'Scalar multiplication:\n{array2 * 3 = }\n')
-
-# broadcasting addition array
-print(f'Broadcasting addition:\n{array1 + 7 = }')
+# ====== Broadcasting ======
+print(f"Broadcasting Addition (array1 + 7): {array1 + 7}\n")

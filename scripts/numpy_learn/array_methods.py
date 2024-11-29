@@ -1,83 +1,77 @@
 import numpy as np
 
-# create arrays
-matrix1 = np.array([
-    [1, 2, 3],
-    [4, 5, 6]
-])
-matrix2 = np.array([
-    [1, 2],
-    [3, 4]
-])
-
-matrix3 = np.array([
-    [3, 2, 6],
-    [7, 4, 9]
-])
-
+# ====== Data Initialization ======
+matrix1 = np.array([[1, 2, 3], [4, 5, 6]])
+matrix2 = np.array([[1, 2], [3, 4]])
+matrix3 = np.array([[3, 2, 6], [7, 4, 9]])
 vector1 = np.array([3.0, 7.0, 5.2, 2.1, 3.5, 2.6, 1.4, 0.2])
 numbers1 = np.array([1, 2, 3])
 numbers2 = np.array([4, 5, 6])
 expenses = np.array([np.nan, np.nan, 200.0, 650.0, 1525.0, np.nan])
 
-# print arrays
-print(f'matrix1 =\n{matrix1}\n')
-print(f'matrix2 =\n{matrix2}\n')
-print(f'matrix3 =\n{matrix3}\n')
-print(f'{vector1 = }\n')
-print(f'{numbers1 = }\n')
-print(f'{numbers2 = }\n')
-print(f'{expenses = }\n')
+# ====== Utility Functions ======
+def print_array(name: str, array: np.ndarray) -> None:
+    """Utility to print arrays in a structured format."""
+    print(f"{name} =\n{array}\n")
 
-# transpose arrays
-print(f'Transpose of matrix1:\n{matrix1.T}\n')
-print(f'Transpose of matrix2:\n{matrix2.T}\n')
+def handle_missing_data(array: np.ndarray) -> np.ndarray:
+    """Replaces NaN values in the array with 0.0."""
+    return np.nan_to_num(array, nan=0.0)
 
-# sum of arrays
-print(f'Sum of matrix1: {matrix1.sum()}')
-print(f'Sum of matrix2: {matrix2.sum()}')
-print(f'Sum of vector1: {vector1.sum()}\n')
+# ====== Printing Arrays ======
+print_array("matrix1", matrix1)
+print_array("matrix2", matrix2)
+print_array("matrix3", matrix3)
+print_array("vector1", vector1)
+print_array("numbers1", numbers1)
+print_array("numbers2", numbers2)
+print_array("expenses", expenses)
 
-# mean of arrays
-print(f'Mean of matrix1: {matrix1.mean()}')
-print(f'Mean of matrix2: {matrix2.mean()}')
-print(f'Mean of vector1: {vector1.mean()}\n')
+# ====== Basic Array Operations ======
+print(f"Transpose of matrix1:\n{matrix1.T}\n")
+print(f"Transpose of matrix2:\n{matrix2.T}\n")
 
-# max of arrays
-print(f'Max of matrix1: {matrix1.max()}')
-print(f'Max of matrix2: {matrix2.max()}')
-print(f'Max of vector1: {vector1.max()}\n')
+# Aggregation Operations
+print(f"Sum of matrix1: {matrix1.sum()}")
+print(f"Sum of matrix2: {matrix2.sum()}")
+print(f"Sum of vector1: {vector1.sum()}\n")
 
-# min of arrays
-print(f'Min of matrix1: {matrix1.min()}')
-print(f'Min of matrix2: {matrix2.min()}')
-print(f'Min of vector1: {vector1.min()}\n')
+print(f"Mean of matrix1: {matrix1.mean()}")
+print(f"Mean of matrix2: {matrix2.mean()}")
+print(f"Mean of vector1: {vector1.mean()}\n")
 
-# std of arrays
-print(f'Std of matrix1: {matrix1.std()}')
-print(f'Std of matrix2: {matrix2.std()}')
-print(f'Std of vector1: {vector1.std()}\n')
+print(f"Max of matrix1: {matrix1.max()}")
+print(f"Max of matrix2: {matrix2.max()}")
+print(f"Max of vector1: {vector1.max()}\n")
 
-# argmax and argmin. They will print element index
-print(f'Argmax of matrix1: {matrix1.argmax()}')
-print(f'Argmin of matrix1: {matrix1.argmin()}\n')
+print(f"Min of matrix1: {matrix1.min()}")
+print(f"Min of matrix2: {matrix2.min()}")
+print(f"Min of vector1: {vector1.min()}\n")
 
-# concatenating arrays
+print(f"Standard Deviation of matrix1: {matrix1.std()}")
+print(f"Standard Deviation of matrix2: {matrix2.std()}")
+print(f"Standard Deviation of vector1: {vector1.std()}\n")
+
+# Index Operations
+print(f"Argmax of matrix1: {matrix1.argmax()}")
+print(f"Argmin of matrix1: {matrix1.argmin()}\n")
+
+# ====== Advanced Operations ======
+# Concatenating Arrays
 combined_numbers = np.concatenate((numbers1, numbers2))
-print(f'Combined numbers: {combined_numbers}')
+print_array("Combined Numbers", combined_numbers)
 
 combined_matrix = np.concatenate((matrix2, matrix2))
-print(f'Combined matrix:\n{combined_matrix}\n')
+print_array("Combined Matrix", combined_matrix)
 
-# spliting arrays
-print(f'Splited combined_numbers by 2 batches: {np.split(combined_numbers, 2)}')
-print(f'Splited combined_numbers by 3 batches: {np.split(combined_numbers, 3)}')
-print(f'Splited matrix2: {np.split(matrix2, 2)}')
+# Splitting Arrays
+print(f"Split combined_numbers into 2 batches: {np.split(combined_numbers, 2)}")
+print(f"Split combined_numbers into 3 batches: {np.split(combined_numbers, 3)}\n")
 
-# sorting arrays
-print(f'Sorted vector1: {np.sort(vector1)}')
-print(f'Sorted matrix3:\n{np.sort(matrix3, axis=1)}\n')
+# Sorting Arrays
+print(f"Sorted vector1: {np.sort(vector1)}")
+print(f"Sorted matrix3 (row-wise):\n{np.sort(matrix3, axis=1)}\n")
 
-# handling missing data
-cleaned_expenses = np.nan_to_num(expenses, nan=0.0)
-print(f'Cleaned expenses: {cleaned_expenses}')
+# ====== Missing Data Handling ======
+cleaned_expenses = handle_missing_data(expenses)
+print_array("Cleaned Expenses", cleaned_expenses)
