@@ -34,8 +34,8 @@ large_array = np.arange(1000000, dtype=np.int16)
 print(f'Large array (first and last 5 elements): {large_array[:5]}... {large_array[-5:]}\n')
 
 # load data with specified dtype
-data = np.genfromtxt('data/csvs/numbers.csv', delimiter=',', dtype=np.int32)
+data = np.genfromtxt('data/csvs/numbers.csv', dtype=np.int32)
 print(f'Loaded data with dtype np.int32:\n{data}\n')
 
-data = np.genfromtxt('data/csvs/numbers.csv', delimiter=',', dtype=np.float32)
+data = np.genfromtxt('data/csvs/numbers.csv', dtype=np.float32)
 print(f'Loaded data with dtype np.float32:\n{data}\n')
