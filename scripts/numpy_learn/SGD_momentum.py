@@ -58,3 +58,11 @@ def stochastic_gradient(x):
     """
     return 3 * x**2 - 8 * x + 2
 
+# start the SGD at x = 5
+x_start = 5  # initial guess
+optimized_x, history = sgd_momentum(x_start, learning_rate=0.01, max_iter=200, momentum=0.9, grad_clip_value=10.0)
+
+# display the optimized value of x
+print(f"Optimized value of x: {optimized_x:.4f}")
+
+
