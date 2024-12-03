@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 def sgd_momentum(
         x_start: int,
@@ -65,4 +66,15 @@ optimized_x, history = sgd_momentum(x_start, learning_rate=0.01, max_iter=200, m
 # display the optimized value of x
 print(f"Optimized value of x: {optimized_x:.4f}")
 
+# plot the function and the optimization path
+x_vals = np.linspace(-1, 6, 100)  # values for plotting the function
+y_vals = f(x_vals)  # compute the function values
 
+plt.figure(figsize=(10, 6))
+plt.plot(x_vals, y_vals, label="f(x) = x³ - 4x² + 2x")  # plot the function
+plt.scatter(history, f(np.array(history)), color='r', label="Optimization Path")  # plot the optimization path
+plt.title("Stochastic Gradient Descent with Momentum on a Non-Convex Function")
+plt.xlabel("x")
+plt.ylabel("f(x)")
+plt.legend()
+plt.show()
