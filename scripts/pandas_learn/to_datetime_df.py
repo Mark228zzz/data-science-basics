@@ -29,3 +29,7 @@ print(f'Adding "Year", "Month", "Day", "Weekday" in the DataFrame:\n{df}\n')
 # filter events after a specific date
 filtered_df = df[df['Datetime'] > pd.Timestamp('2024-12-03')]
 print(f'Events After 2024-12-03:\n{filtered_df}\n')
+
+# apply function to extract the day of the week
+df['DayOfWeek'] = df['Date'].apply(lambda x: x.day_name() if not pd.isna(x) else 'Invalid')
+print(f'Find names of the day of the week:\n{df}\n')
