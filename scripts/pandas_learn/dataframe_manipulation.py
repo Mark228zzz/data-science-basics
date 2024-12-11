@@ -69,4 +69,4 @@ print(f'New DataFrame after calculating "Revenue":\n{coffee}\n')
 
 # rename "Coffee Type" with "Type of Coffee"
 coffee.rename(columns={'Coffee Type': 'Type of Coffee'}, inplace=True)
-print(f'Re')
+print(f'Rename "Coffee Type" with "Type of Coffee":\n{coffee}\n')
