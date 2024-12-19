@@ -1,11 +1,11 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Create a 3D surface plot
+# create a 3D surface plot
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 
-# Generate meshgrid data for x, y, and calculate z
+# generate meshgrid data for x, y, and calculate z
 x = np.linspace(-5, 5, 100)
 y = np.linspace(-5, 5, 100)
 x, y = np.meshgrid(x, y)
